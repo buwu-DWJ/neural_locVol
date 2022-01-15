@@ -28,8 +28,98 @@ the Black Scholes hedges and the ground truth assumption.
 
 ToDo: Add documentation
 """
+    """
+    Summary:
+     sdsakjdahdskjsasaadsad
+    Parameters:
+    ----------
 
+    type:undefined
+    [description]
+    """
+    
+    """
+    Summary:
+    -----------------------------
+    
 
+    Arguments:
+    -----------------------------
+    type:undefined
+    [description]
+
+    Raises:
+    -----------------------------
+    undefined
+    [description]
+
+    Return:
+    -----------------------------
+    undefinedfunvtion yo  
+    [description]"""
+    
+    """
+    Summary:
+    -----------------------------
+     This is a 
+
+    Arguments:
+    -----------------------------
+    type:undefined
+    [description]
+
+    Raises:
+    -----------------------------
+    undefined
+    [description]
+
+    Return:
+    -----------------------------
+    undefined
+    [description]"""
+    
+    """
+    Summary:
+    -----------------------------
+     The function to consume the sum of two inputs
+
+    Arguments:
+    -----------------------------
+    type:a
+    the first inputs
+
+    Raises:
+    -----------------------------
+    undefined
+    [description]
+
+    Return:
+    -----------------------------
+    type:undefined
+    undefined
+    [description]"""
+    
+    """
+    Summary:
+    -----------------------------
+     [summary]
+
+    Arguments:
+    -----------------------------
+    type:undefined
+    [description]
+
+    Raises:
+    -----------------------------
+    undefined
+    [description]
+
+    Return:
+    -----------------------------
+    type:undefined
+    undefined
+    [description]
+    """
 import matplotlib as mpl
 mpl.use('Agg')
 import matplotlib.pyplot as plt
@@ -176,7 +266,7 @@ def main(finsurf, paraMC, just_ops = False):
 
             N_MC_train = paraMC['N_mc_train']
             N_outer_simMC = paraMC['N_mc_runs']
-                
+               
             alphavega = finsurf.iV[iter_mat]
             d1 = np.log(finsurf.spot/strikes[iter_mat]  )   + 0.5 * (alphavega)**2 * maturities[iter_mat]
             d1 /= alphavega * np.sqrt(maturities[iter_mat])
@@ -201,6 +291,7 @@ def main(finsurf, paraMC, just_ops = False):
             print('\n\n')
 
             while FLAG_keepTraining:
+# 训练过程
 
                 train += 1
                 trainReal += 1
@@ -234,7 +325,8 @@ def main(finsurf, paraMC, just_ops = False):
 
                     implVola_d_slice = finsurf.iV[iter_mat]
                     ivErrorRaw = np.abs(iV_lsv_slice - implVola_d_slice)
-
+            
+# 更新对抗网络的参数 w 
                     # Update the weights
                     weights_step = weights_step + 1.0 * ivErrorRaw
                     weights_step = weights_step/np.sum(weights_step)

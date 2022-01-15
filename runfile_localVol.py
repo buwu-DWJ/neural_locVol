@@ -23,6 +23,7 @@
 # SOFTWARE.
 
 """runfile_localVol.py:
+基于输入的给定参数和期权画 local vol 图
 This file implements the the functionality for computing and plotting local-vol 
 implied volatilities for the sampled parameters given as input and options also
 given as input. Starting point is the main function.

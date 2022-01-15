@@ -378,7 +378,17 @@ def hedge_error(*,finsurf, para_MC, Batchsize_tf, sig, use_hedges, weights_list,
     else:
         return(cost_tf, prices_tf)
 
+class a:
 
-
+    def __init__(self):
+        self.a = 1
+        return
+    
+    def shit(self):
+        return 100
+    
+    def fuck(self):
+        return 0.0
+    
 
 
